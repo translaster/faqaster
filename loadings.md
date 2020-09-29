@@ -36,7 +36,7 @@
 
 * [Microsip](https://www.microsip.org/)
 
-* [Zopier](https://www.zoiper.com/en/voip-softphone/download/current)
+* [Zoiper](https://www.zoiper.com/en/voip-softphone/download/current)
 
 * [Ekiga](https://www.ekiga.org/)
 
