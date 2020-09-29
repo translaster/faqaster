@@ -14,7 +14,9 @@
 
 ## Литература
 
-* [База знаний](http://asterisk.ru/knowledgebase)
+* [База знаний Asterisk.ru](http://asterisk.ru/knowledgebase)
+
+* [База знаний Voxlink](https://voxlink.ru/kb/)
 
 * [Книги](http://asterisk.ru/knowledgebase/books)
 
