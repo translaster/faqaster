@@ -18,6 +18,8 @@
 
 * [База знаний Voxlink](https://voxlink.ru/kb/)
 
+* [База знаний atsip.ru](http://atsip.ru/pomoshch/nastrojka-asterisk)
+
 * [Книги](http://asterisk.ru/knowledgebase/books)
 
 * [Asterisk: Будущее телефонии, 2 издание](http://asterisk.ru/store/files/Asterisk_RU_OReilly_DRAFT.pdf)
