@@ -41,3 +41,7 @@
 * [Ekiga](https://www.ekiga.org/)
 
 * [Linphone](https://www.linphone.org/)
+
+## Полезные ресурсы
+
+* [Озвучка текста онлайн](https://apihost.ru/voice)
