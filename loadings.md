@@ -45,3 +45,5 @@
 ## Полезные ресурсы
 
 * [Озвучка текста онлайн](https://apihost.ru/voice)
+
+* [Telegram-бот для озвучки](https://t.me/VoiceKitBot)
