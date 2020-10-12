@@ -42,7 +42,7 @@
 
 * [Linphone](https://www.linphone.org/)
 
-* [3CXPhone](https://downloads-global.3cx.com/downloads/3CXPhone6.msi)
+* [3CXPhone](https://www.3cx.com/voip/softphone/)
 
 * [Grandstream Wave](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
