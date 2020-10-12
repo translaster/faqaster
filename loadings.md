@@ -42,6 +42,10 @@
 
 * [Linphone](https://www.linphone.org/)
 
+* [3CXPhone](https://downloads-global.3cx.com/downloads/3CXPhone6.msi)
+
+* [Grandstream Wave](https://grandstream-russia.ru/products/ip_pbx/wave.html)
+
 ## Полезные ресурсы
 
 * [Озвучка текста онлайн](https://apihost.ru/voice)
