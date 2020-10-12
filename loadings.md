@@ -46,6 +46,8 @@
 
 * [Grandstream Wave](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
+* [CSipSimple (4PDA)](https://4pda.ru/forum/index.php?showtopic=197229)
+
 ## Полезные ресурсы
 
 * [Озвучка текста онлайн](https://apihost.ru/voice)
