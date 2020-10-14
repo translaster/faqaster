@@ -43,3 +43,11 @@
 отобрать у пользователя:группы `asterisk` права на доступ к файлам в /etc/unixODBC/
 
 ---
+
+#### Уведомления о пропущенных вызовах
+
+* [в Telegram](https://wiki.merionet.ru/ip-telephoniya/63/modul-integracii-s-telegram-v-freepbx/)
+  - [ссылка на файл](files/missedcallnotify-0.1.1-fix.tar.gz)
+
+* [на e-mail](https://habr.com/ru/post/463829/)
+  - [на e-mail аналогично Telegram (устаревший модуль)](https://github.com/FreePBX-ContributedModules/missedcallnotify)
