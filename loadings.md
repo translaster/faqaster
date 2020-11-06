@@ -26,7 +26,7 @@
 
 * [Asterisk: Окончательное руководство, 4 издание](https://clck.ru/JDZUV)
 
-* [Asterisk: Полное руководство, 5 издание (читать в вебе)](https://translaster.github.io/Definitive-Guide-5th-Edition/SUMMARY.html)
+* [Asterisk: Полное руководство, 5 издание](https://clck.ru/RRNqY)
 
 * [FreePBX 13: Руководство администратора](http://asterisk.ru/store/files/Rukovodstvo_Administratora_FreePBX_RU.pdf)
 
