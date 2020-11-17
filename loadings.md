@@ -14,6 +14,8 @@
 
 ## Литература
 
+* [Документация на wiki Asterisk](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Exported+Documentation)
+
 * [База знаний Asterisk.ru](http://asterisk.ru/knowledgebase)
 
 * [База знаний Voxlink](https://voxlink.ru/kb/)
