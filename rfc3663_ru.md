@@ -27,35 +27,64 @@ Copyright (C) The Internet Society (2003). все права защищены.
 ## Содержание
 
 1.  Overview . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+
   1.1.  General Assumptions. . . . . . . . . . . . . . . . . . .  3
+
   1.2.  Legend for Message Flows . . . . . . . . . . . . . . . .  3
+
   1.3.  SIP Protocol Assumptions . . . . . . . . . . . . . . . .  4
+
 2.  SIP Registration . . . . . . . . . . . . . . . . . . . . . . .  4
+
   2.1.  Successful New Registration. . . . . . . . . . . . . . .  5
-       2.2.  Update of Contact List . . . . . . . . . . . . . . . . .  7
-       2.3.  Request for Current Contact List . . . . . . . . . . . .  8
-       2.4.  Cancellation of Registration . . . . . . . . . . . . . .  9
-       2.5.  Unsuccessful Registration. . . . . . . . . . . . . . . . 10
-   3.  SIP Session Establishment. . . . . . . . . . . . . . . . . . . 12
-       3.1.  Successful Session Establishment . . . . . . . . . . . . 12
-       3.2.  Session Establishment Through Two Proxies. . . . . . . . 15
-       3.3.  Session with Multiple Proxy Authentication . . . . . . . 26
-       3.4.  Successful Session with Proxy Failure. . . . . . . . . . 37
-       3.5.  Session Through a SIP ALG. . . . . . . . . . . . . . . . 46
-       3.6.  Session via Redirect and Proxy Servers with SDP in ACK . 54
-       3.7.  Session with re-INVITE (IP Address Change) . . . . . . . 61
-       3.8.  Unsuccessful No Answer . . . . . . . . . . . . . . . . . 67
-       3.9.  Unsuccessful Busy. . . . . . . . . . . . . . . . . . . . 75
-       3.10. Unsuccessful No Response from User Agent . . . . . . . . 80
-       3.11. Unsuccessful Temporarily Unavailable . . . . . . . . . . 85
-   4.  Security Considerations. . . . . . . . . . . . . . . . . . . . 91
-   5.  References . . . . . . . . . . . . . . . . . . . . . . . . . . 91
-       5.1.  Normative References . . . . . . . . . . . . . . . . . . 91
-       5.2.  Informative References . . . . . . . . . . . . . . . . . 91
-   6.  Intellectual Property Statement. . . . . . . . . . . . . . . . 91
-   7.  Acknowledgments. . . . . . . . . . . . . . . . . . . . . . . . 92
-   8.  Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . 93
-   9.  Full Copyright Statement . . . . . . . . . . . . . . . . . . . 94
+
+  2.2.  Update of Contact List . . . . . . . . . . . . . . . . .  7
+
+  2.3.  Request for Current Contact List . . . . . . . . . . . .  8
+
+  2.4.  Cancellation of Registration . . . . . . . . . . . . . .  9
+
+  2.5.  Unsuccessful Registration. . . . . . . . . . . . . . . . 10
+
+3.  SIP Session Establishment. . . . . . . . . . . . . . . . . . . 12
+
+  3.1.  Successful Session Establishment . . . . . . . . . . . . 12
+
+  3.2.  Session Establishment Through Two Proxies. . . . . . . . 15
+
+  3.3.  Session with Multiple Proxy Authentication . . . . . . . 26
+
+  3.4.  Successful Session with Proxy Failure. . . . . . . . . . 37
+
+  3.5.  Session Through a SIP ALG. . . . . . . . . . . . . . . . 46
+
+  3.6.  Session via Redirect and Proxy Servers with SDP in ACK . 54
+
+  3.7.  Session with re-INVITE (IP Address Change) . . . . . . . 61
+
+  3.8.  Unsuccessful No Answer . . . . . . . . . . . . . . . . . 67
+
+  3.9.  Unsuccessful Busy. . . . . . . . . . . . . . . . . . . . 75
+
+  3.10. Unsuccessful No Response from User Agent . . . . . . . . 80
+
+  3.11. Unsuccessful Temporarily Unavailable . . . . . . . . . . 85
+
+4.  Security Considerations. . . . . . . . . . . . . . . . . . . . 91
+
+5. References . . . . . . . . . . . . . . . . . . . . . . . . . . 91
+
+  5.1.  Normative References . . . . . . . . . . . . . . . . . . 91
+
+  5.2.  Informative References . . . . . . . . . . . . . . . . . 91
+
+6.  Intellectual Property Statement. . . . . . . . . . . . . . . . 91
+
+7.  Acknowledgments. . . . . . . . . . . . . . . . . . . . . . . . 92
+
+8.  Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . 93
+
+9.  Full Copyright Statement . . . . . . . . . . . . . . . . . . . 94
 
 ## 1.Обзор
 
