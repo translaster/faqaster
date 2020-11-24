@@ -26,69 +26,47 @@ Copyright (C) The Internet Society (2003). все права защищены.
 
 ## Содержание
 
-1.  Overview
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-  1.1.  General Assumptions
+- [Session Initiation Protocol (SIP) Basic Call Flow Examples](#session-initiation-protocol-sip-basic-call-flow-examples)
+			- [Статус документа](#-)
+			- [Уведомление об авторских правах](#-)
+			- [Абстрактно](#)
+	- [Содержание](#)
+	- [1. Обзор](#1-)
+		- [1.1 Главный постулат](#11-)
+		- [1.2. Условные обозначения для потоков сообщений](#12-)
+		- [1.3 Постулат протокола SIP](#13-sip)
+	- [2. SIP-регистрация](#2-sip-)
+		- [2.1 Успешная новая регистрация](#21-)
+		- [2.2. Обновление списка контактов](#22-)
+		- [2.3. Запрос текущего списка контактов](#23-)
+		- [2.4. Отмена регистрации](#24-)
+	- [3. Установка сеанса SIP](#3-sip)
+		- [3.1. Успешная установка сеанса](#31-)
+		- [3.2. Установка сеанса через два прокси](#32-)
+		- [3.3.  Сеанс с множественной прокси-аутентификацией](#33-)
+		- [3.5.  Сеанс через SIP ALG](#35-sip-alg)
+		- [3.6.  Сеанс через редирект и прокси-серверы с SDP в ACK](#36-sdp-ack)
+		- [3.7.  Сеанс с re-INVITE (Смена IP-адреса)](#37-re-invite-ip-)
+		- [3.8.  Неудачный нет ответа](#38-)
+		- [3.9.  Неудачно - занято](#39-)
+		- [3.10.  Unsuccessful No Response from User Agent](#310-unsuccessful-no-response-from-user-agent)
+		- [3.11.  Unsuccessful Temporarily Unavailable](#311-unsuccessful-temporarily-unavailable)
+	- [4.  Security Considerations](#4-security-considerations)
+	- [5.  References](#5-references)
+		- [5.1.  Normative References](#51-normative-references)
+		- [5.2.  Informative References](#52-informative-references)
+	- [6.  Intellectual Property Statement](#6-intellectual-property-statement)
+	- [7.  Acknowledgments](#7-acknowledgments)
+	- [8.  Authors' Addresses](#8-authors-addresses)
+	- [9.  Full Copyright Statement](#9-full-copyright-statement)
 
-  1.2.  Legend for Message Flows
-
-  1.3.  SIP Protocol Assumptions
-
-2.  SIP Registration
-
-  2.1.  Successful New Registration
-
-  2.2.  Update of Contact List
-
-  2.3.  Request for Current Contact List
-
-  2.4.  Cancellation of Registration
-
-  2.5.  Unsuccessful Registration
-
-3.  SIP Session Establishment
-
-  3.1.  Successful Session Establishment
-
-  3.2.  Session Establishment Through Two Proxies
-
-  3.3.  Session with Multiple Proxy Authentication
-
-  3.4.  Successful Session with Proxy Failure
-
-  3.5.  Session Through a SIP ALG
-
-  3.6.  Session via Redirect and Proxy Servers with SDP in ACK
-
-  3.7.  Session with re-INVITE (IP Address Change)
-
-  3.8.  Unsuccessful No Answer
-
-  3.9.  Unsuccessful Busy
-
-  3.10. Unsuccessful No Response from User Agent
-
-  3.11. Unsuccessful Temporarily Unavailable
-
-4.  Security Considerations
-
-5. References
-
-  5.1.  Normative References
-
-  5.2.  Informative References
-
-6.  Intellectual Property Statement
-
-7.  Acknowledgments
-
-8.  Authors' Addresses
-
-9.  Full Copyright Statement
+<!-- /TOC -->
 
 ---
 
-## 1.Обзор
+## 1. Обзор
 
 Потоки вызовов, показанные в этом документе, были созданы при проектировании сети связи SIP IP. Они представляют собой пример минимального набора функциональных возможностей.
 
