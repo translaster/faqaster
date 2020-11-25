@@ -1,4 +1,4 @@
-# Session Initiation Protocol (SIP) Basic Call Flow Examples
+# Основные примеры потока вызовов Session Initiation Protocol (SIP)
 
 >
 > Network Working Group                                        A. Johnston
@@ -18,7 +18,7 @@
 
 #### Уведомление об авторских правах
 
-Copyright (C) The Internet Society (2003). все права защищены.
+Copyright (C) The Internet Society (2003). Все права защищены.
 
 #### Абстрактно
 
@@ -28,7 +28,7 @@ Copyright (C) The Internet Society (2003). все права защищены.
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Session Initiation Protocol (SIP) Basic Call Flow Examples](#session-initiation-protocol-sip-basic-call-flow-examples)
+- [Основные примеры потока вызовов Session Initiation Protocol (SIP)](#основные-примеры-потока-вызовов-session-initiation-protocol-sip)
 	- [1. Обзор](#1-обзор)
 		- [1.1 Главный постулат](#11-главный-постулат)
 		- [1.2. Условные обозначения для потоков сообщений](#12-условные-обозначения-для-потоков-сообщений)
@@ -41,23 +41,24 @@ Copyright (C) The Internet Society (2003). все права защищены.
 		- [2.5. Неудачная регистрация](#25-неудачная-регистрация)
 	- [3. Установка сеанса SIP](#3-установка-сеанса-sip)
 		- [3.1. Успешная установка сеанса](#31-успешная-установка-сеанса)
-		- [3.2. Установка сеанса через два прокси](#32-)
-		- [3.3.  Сеанс с множественной прокси-аутентификацией](#33-)
-		- [3.5.  Сеанс через SIP ALG](#35-sip-alg)
-		- [3.6.  Сеанс через редирект и прокси-серверы с SDP в ACK](#36-sdp-ack)
-		- [3.7.  Сеанс с re-INVITE (Смена IP-адреса)](#37-re-invite-ip-)
-		- [3.8.  Неудачный нет ответа](#38-)
-		- [3.9.  Неудачно - занято](#39-)
-		- [3.10.  Unsuccessful No Response from User Agent](#310-unsuccessful-no-response-from-user-agent)
-		- [3.11.  Unsuccessful Temporarily Unavailable](#311-unsuccessful-temporarily-unavailable)
-	- [4.  Security Considerations](#4-security-considerations)
-	- [5.  References](#5-references)
-		- [5.1.  Normative References](#51-normative-references)
-		- [5.2.  Informative References](#52-informative-references)
-	- [6.  Intellectual Property Statement](#6-intellectual-property-statement)
-	- [7.  Acknowledgments](#7-acknowledgments)
-	- [8.  Authors' Addresses](#8-authors-addresses)
-	- [9.  Full Copyright Statement](#9-full-copyright-statement)
+		- [3.2. Установка сеанса через два прокси](#32-установка-сеанса-через-два-прокси)
+		- [3.3. Сеанс с множественной прокси-аутентификацией](#33-сеанс-с-множественной-прокси-аутентификацией)
+		- [3.4. Успешный сеанс с отказом прокси-сервера](#34-успешный-сеанс-с-отказом-прокси-сервера)
+		- [3.5. Сеанс через SIP ALG](#35-сеанс-через-sip-alg)
+		- [3.6. Сеанс через редирект и прокси-серверы с SDP в ACK](#36-сеанс-через-редирект-и-прокси-серверы-с-sdp-в-ack)
+		- [3.7. Сеанс с re-INVITE (Смена IP-адреса)](#37-сеанс-с-re-invite-смена-ip-адреса)
+		- [3.8. Неудачно - нет ответа](#38-неудачно-нет-ответа)
+		- [3.9. Неудачно - занято](#39-неудачно-занято)
+		- [3.10. Неудачно - нет ответа от User Agent](#310-неудачно-нет-ответа-от-user-agent)
+		- [3.11. Неудачно - временно недоступно](#311-неудачно-временно-недоступно)
+	- [4. Соображения безопасности](#4-соображения-безопасности)
+	- [5. Ссылки](#5-ссылки)
+		- [5.1. Нормативные ссылки](#51-нормативные-ссылки)
+		- [5.2. Информативные ссылки](#52-информативные-ссылки)
+	- [6. Заявление об интеллектуальной собственности](#6-заявление-об-интеллектуальной-собственности)
+	- [7. Благодарности](#7-благодарности)
+	- [8. Адреса авторов](#8-адреса-авторов)
+	- [9. Полное заявление об авторских правах](#9-полное-заявление-об-авторских-правах)
 
 <!-- /TOC -->
 
@@ -1019,7 +1020,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    Content-Length: 0
 ```
 
-### 3.3.  Сеанс с множественной прокси-аутентификацией
+### 3.3. Сеанс с множественной прокси-аутентификацией
 
 ```
      Alice        Proxy 1     Proxy 2         Bob
@@ -1523,7 +1524,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    Content-Length: 0
 ```
 
-### 3.4.  Успешный сеанс с отказом прокси-сервера
+### 3.4. Успешный сеанс с отказом прокси-сервера
 
 ```
     Alice           Proxy 1          Proxy 2            Bob
@@ -2288,7 +2289,7 @@ Alice совершает вызов Bob через ALG (шлюз приклад�
    Content-Length: 0
 ```
 
-### 3.6.  Сеанс через редирект и прокси-серверы с SDP в ACK
+### 3.6. Сеанс через редирект и прокси-серверы с SDP в ACK
 ```
    Alice        Redirect Server     Proxy 3             Bob
      |                |                |                |
@@ -2590,7 +2591,7 @@ The call is terminated when Bob sends a BYE message.
    Content-Length: 0
 ```
 
-### 3.7.  Сеанс с re-INVITE (Смена IP-адреса)
+### 3.7. Сеанс с re-INVITE (Смена IP-адреса)
 
 ```
      Alice                Proxy 2                Bob
@@ -2864,7 +2865,7 @@ This example shows a session in which the media changes midway through the sessi
    Content-Length: 0
 ```
 
-### 3.8.  Неудачный нет ответа
+### 3.8. Неудачно - нет ответа
 
 ```
    Alice           Proxy 1          Proxy 2            Bob
@@ -3444,7 +3445,7 @@ In this scenario, Bob is busy and sends a 486 Busy Here response to Alice's INVI
    Content-Length: 0
 ```
 
-### 3.10.  Unsuccessful No Response from User Agent
+### 3.10. Неудачно - нет ответа от User Agent
 
 ```
    Alice           Proxy 1          Proxy 2            Bob
@@ -3492,15 +3493,6 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
    Contact: <sip:alice@client.atlanta.example.com>
    Proxy-Authorization: Digest username="alice",
     realm="atlanta.example.com",
-
-
-
-                 [Page 80]
-
-
-
-
-
     nonce="cf5904ba7d8dc3a5ab2530aa931128fa", opaque="",
     uri="sip:bob@biloxi.example.com",
     response="7afc04be7961f053c24f80e7dbaf888f"
@@ -3685,7 +3677,7 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
    Content-Length: 0
 ```
 
-### 3.11.  Unsuccessful Temporarily Unavailable
+### 3.11. Неудачно - временно недоступно
 
 ```
    Alice          Proxy 1          Proxy 2            Bob
@@ -3962,13 +3954,13 @@ In this scenario, Bob initially sends a 180 Ringing response to Alice, indicatin
    Content-Length: 0
 ```
 
-## 4.  Security Considerations
+## 4. Соображения безопасности
 
 Since this document contains examples of SIP session establishment, the security considerations in RFC 3261 [1] apply.  RFC 3261 describes the basic threats including registration hijacking, server impersonation, message body tampering, session modifying or teardown, and denial of service and amplification attacks.  The use of HTTP Digest as shown in this document provides one-way authentication and protection against replay attacks.  TLS transport is used in registration scenarios due to the lack of integrity protection in HTTP Digest and the danger of registration hijacking without it, as described in RFC 3261 [1].  A full discussion of the weaknesses of HTTP Digest is provided in RFC 3261 [1].  The use of TLS and the Secure SIP (sips) URI scheme provides a better level of security including two-way authentication.  S/MIME can provide end-to-end confidentiality and integrity protection of message bodies, as described in RFC 3261.
 
-## 5.  References
+## 5. Ссылки
 
-### 5.1.  Normative References
+### 5.1. Нормативные ссылки
 
    [1] Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston, A.,
        Peterson, J., Sparks, R., Handley, M. and E. Schooler, "SIP:
@@ -3984,20 +3976,20 @@ Since this document contains examples of SIP session establishment, the security
    [4] Bradner, S., "Key words for use in RFCs to Indicate Requirement
        Levels", BCP 14, RFC 2119, March 1997.
 
-### 5.2.  Informative References
+### 5.2. Информативные ссылки
 
    [5] Johnston, A., Donovan, S., Sparks, R., Cunningham, C. and K.
        Summers, "Session Initiation Protocol (SIP) Public Switched
        Telephone Network (PSTN) Call Flows", BCP 76, RFC 3666, December
        2003.
 
-## 6.  Intellectual Property Statement
+## 6. Заявление об интеллектуальной собственности
 
 The IETF takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights.  Information on the IETF's procedures with respect to rights in standards-track and standards-related documentation can be found in BCP-11.  Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementors or users of this specificatio n can be obtained from the IETF Secretariat.
 
 The IETF invites any interested party to bring to its attention any copyrights, patents or patent applications, or other proprietary rights which may cover technology that may be required to practice this standard.  Please address the information to the IETF Executive Director.
 
-## 7.  Acknowledgments
+## 7. Благодарности
 
 This document is has been a group effort by the SIP and SIPPING WGs. The authors wish to thank everyone who has read, reviewed, commented, or made suggestions to improve this document.
 
@@ -4009,7 +4001,7 @@ The authors wish to thank the following individuals for their participation in t
 
 The authors also wish to thank the following individuals for their assistance: Jean-Francois Mule, Hemant Agrawal, Henry Sinnreich, David Devanatham, Joe Pizzimenti, Matt Cannon, John Hearty, the whole MCI WorldCom IPOP Design team, Scott Orton, Greg Osterhout, Pat Sollee, Doug Weisenberg, Danny Mistry, Steve McKinnon, and Denise Ingram, Denise Caballero, Tom Redman, Ilya Slain, Pat Sollee, John Truetken, and others from MCI WorldCom, 3Com, Cisco, Lucent and Nortel.
 
-## 8.  Authors' Addresses
+## 8. Адреса авторов
 
 All listed authors actively contributed large amounts of text to this document.
 
@@ -4056,7 +4048,7 @@ All listed authors actively contributed large amounts of text to this document.
 
    EMail: kevin.summers@sonusnet.com
 
-## 9.  Full Copyright Statement
+## 9. Полное заявление об авторских правах
 
 Copyright (C) The Internet Society (2003).  All Rights Reserved.
 
