@@ -51,3 +51,24 @@
 
 * [на e-mail](https://habr.com/ru/post/463829/)
   - [на e-mail аналогично Telegram (устаревший модуль)](https://github.com/FreePBX-ContributedModules/missedcallnotify)
+
+#### не запускается FOP2
+#### # /usr/local/fop2/fop2_server --debuglevel 5
+#### eth0: error fetching interface information: Device not found
+#### Can't get info from ifconfig:  at script/fop2_server.pl line 6878.
+
+не найдено устройство eth0
+в `/etc/init.d/fop2` есть строчка
+```
+[ -r /etc/sysconfig/fop2 ] && . /etc/sysconfig/fop2
+```
+лезем туда - это файл опций для запуска fop
+```
+# cat /etc/sysconfig/fop2
+OPTIONS="-d"
+```
+У fop2_server можно просмотреть опции запуска `/usr/local/fop2/fop2_server --help` и интерфейс можно добавить опцией --iface, в итоге файл должен получиться
+```
+# cat /etc/sysconfig/fop2
+OPTIONS="--daemon --iface eth2"
+```
