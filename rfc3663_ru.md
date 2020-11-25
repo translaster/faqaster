@@ -29,10 +29,6 @@ Copyright (C) The Internet Society (2003). все права защищены.
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Session Initiation Protocol (SIP) Basic Call Flow Examples](#session-initiation-protocol-sip-basic-call-flow-examples)
-			- [Статус документа](#-)
-			- [Уведомление об авторских правах](#-)
-			- [Абстрактно](#)
-	- [Содержание](#)
 	- [1. Обзор](#1-)
 		- [1.1 Главный постулат](#11-)
 		- [1.2. Условные обозначения для потоков сообщений](#12-)
@@ -42,6 +38,7 @@ Copyright (C) The Internet Society (2003). все права защищены.
 		- [2.2. Обновление списка контактов](#22-)
 		- [2.3. Запрос текущего списка контактов](#23-)
 		- [2.4. Отмена регистрации](#24-)
+		- [2.5. Неудачная регистрация](#25-)
 	- [3. Установка сеанса SIP](#3-sip)
 		- [3.1. Успешная установка сеанса](#31-)
 		- [3.2. Установка сеанса через два прокси](#32-)
@@ -90,9 +87,9 @@ Copyright (C) The Internet Society (2003). все права защищены.
 
 ### 1.2. Условные обозначения для потоков сообщений
 
-Пунктирные линии (\---) представляют собой сигнальные сообщения, обязательные для сценария вызова. Эти сообщения могут быть сигнализацией SIP или PSTN. Стрелка указывает направление потока сообщений.
+Пунктирные линии (`---`) представляют собой сигнальные сообщения, обязательные для сценария вызова. Эти сообщения могут быть сигнализацией SIP или PSTN. Стрелка указывает направление потока сообщений.
 
-Двойные пунктирные линии (\===) представляют собой медиа-пути между элементами сети.
+Двойные пунктирные линии (`===`) представляют собой медиа-пути между элементами сети.
 
 Сообщения с круглыми скобками вокруг их имени представляют собой необязательные сообщения.
 
@@ -142,7 +139,7 @@ Copyright (C) The Internet Society (2003). все права защищены.
      |                               |
 ```
 
-Bob отправляет запрос SIP `REGISTER` на SIP-сервер. Запрос включает в себя список контактов пользователя. Этот поток показывает использование HTTP дайджест для аутентификации с использованием TLS транспорта. Транспорт TLS используется из-за отсутствия защиты целостности в HTTP Digest и опасности захвата регистрации без него, как описано в RFC 3261 [1].
+Bob отправляет запрос SIP `REGISTER` на SIP-сервер. Запрос включает в себя список контактов пользователя. Этот поток показывает использование HTTP дайджест для аутентификации с использованием TLS транспорта. Транспорт TLS используется из-за отсутствия защиты целостности в дайджесте HTTP и опасности захвата регистрации без него, как описано в RFC 3261 [1].
 Сервер SIP предоставляет Бобу вызов. Боб вводит свой действительный идентификатор пользователя и пароль. SIP-клиент Боба шифрует информацию о пользователе в соответствии с вызовом, выданным SIP-сервером, и отправляет ответ на SIP-сервер. SIP-сервер проверяет учетные данные пользователя. Он регистрирует пользователя в своей базе данных контактов и возвращает ответ (200 OK) SIP-клиенту Боба. Ответ включает текущий список контактов пользователя в заголовках контактов. Показанный формат аутентификации - дайджест HTTP. Предполагается, что Боб ранее не регистрировался на этом сервере.
 
 Детали сообщения:
@@ -265,7 +262,7 @@ Bob отправляет запрос SIP `REGISTER` на SIP-сервер. За
      |                               |
 ```
 
-Bob sends a register request to the Proxy Server containing no Contact headers, indicating the user wishes to query the server for the user's current contact list.  Since the user already has authenticated with the server, the user supplies authentication credentials with the request and is not challenged by the server. The SIP server validates the user's credentials.  The server returns a response (200 OK) which includes the user's current registration list in Contact headers.
+Боб отправляет запрос регистрации, не содержащий заголовков контактов, на прокси-сервер, указывая, что пользователь хочет запросить у сервера текущий список контактов пользователя. Поскольку пользователь уже прошел проверку подлинности на сервере - он предоставляет учетные данные аутентификации вместе с запросом и не оспаривается сервером. SIP-сервер проверяет учетные данные пользователя. Сервер возвращает ответ (`200 OK`), который включает текущий список регистрации пользователя в заголовках контактов.
 
 Детали сообщения
 
@@ -312,7 +309,7 @@ Bob sends a register request to the Proxy Server containing no Contact headers, 
      |                               |
 ```
 
-Bob wishes to cancel their registration with the SIP server.  Bob sends a SIP REGISTER request to the SIP server.  The request has an expiration period of 0 and applies to all existing contact locations. Since the user already has authenticated with the server, the user supplies authentication credentials with the request and is not challenged by the server.  The SIP server validates the user's credentials.  It clears the user's contact list, and returns a response (200 OK) to Bob's SIP client.
+Боб хочет отменить его регистрацию на SIP-сервере. Боб отправляет SIP-запрос `REGISTER` на SIP-сервер. Срок действия запроса равен `0` и применяется ко всем существующим контактам. Поскольку пользователь уже прошел аутентификацию на сервере - он предоставляет учетные данные аутентификации вместе с запросом и не оспаривается сервером. SIP-сервер проверяет учетные данные пользователя. Он очищает список контактов пользователя и возвращает ответ (`200 OK`) SIP-клиенту Боба.
 
 Детали сообщения
 
@@ -346,7 +343,7 @@ Bob wishes to cancel their registration with the SIP server.  Bob sends a SIP RE
    Content-Length: 0
 ```
 
-2.5. Неудачная регистрация
+### 2.5. Неудачная регистрация
 
 ```
    Bob                        SIP Server
@@ -362,7 +359,7 @@ Bob wishes to cancel their registration with the SIP server.  Bob sends a SIP RE
      |                               |
 ```
 
-Bob sends a SIP REGISTER request to the SIP Server.  The SIP server provides a challenge to Bob.  Bob enters her/his user ID and password.  Bob's SIP client encrypts the user information according to the challenge issued by the SIP server and sends the response to the SIP server.  The SIP server attempts to validate the user's credentials, but they are not valid (the user's password does not match the password established for the user's account).  The server returns a response (401 Unauthorized) to Bob's SIP client.
+Боб отправляет SIP-запрос `REGISTER` на SIP-сервер. SIP-сервер предоставляет Бобу вызов. Боб вводит свой идентификатор пользователя и пароль. SIP-клиент Боба шифрует информацию о пользователе в соответствии с вызовом, выданным SIP-сервером, и отправляет ответ на SIP-сервер. SIP-сервер пытается проверить учетные данные пользователя, но они недействительны (пароль пользователя не совпадает с паролем, установленным для учетной записи пользователя). Сервер возвращает ответ (`401 Unauthorized`) SIP-клиенту Боба.
 
 Детали сообщения:
 
@@ -428,9 +425,9 @@ Bob sends a SIP REGISTER request to the SIP Server.  The SIP server provides a c
 
 ## 3. Установка сеанса SIP
 
-This section details session establishment between two SIP User Agents (UAs): Alice and Bob.  Alice (sip:alice@atlanta.example.com) and Bob (sip:bob@biloxi.example.com) are assumed to be SIP phones or SIP-enabled devices.  The successful calls show the initial signaling, the exchange of media information in the form of SDP payloads, the establishment of the media session, then finally the termination of the call.
+В этом разделе подробно описывается установление сеанса между двумя агентами SIP-пользователей (UAs): Alice и Bob. Alice (sip:alice@atlanta.example.com) и Bob (sip:bob@biloxi.example.com) считаются SIP-телефонами или устройствами с поддержкой SIP. Успешные вызовы показывают начальную сигнализацию, обмен медиа-информацией в виде полезных нагрузок SDP, установление медиа - сеанса, а затем, наконец, завершение вызова.
 
-HTTP Digest authentication is used by Proxy Servers to authenticate the caller Alice.  It is assumed that Bob has registered with Proxy Server Proxy 2 as per Section 2 to be able to receive the calls via the Proxy.
+Дайджест-проверки подлинности http используется прокси-сервером для аутентификации абонента Alice. Предполагается, что Боб зарегистрировался на прокси-сервере `Proxy 2` в соответствии с разделом 2, чтобы иметь возможность принимать вызовы через прокси-сервер.
 
 ### 3.1. Успешная установка сеанса
 
@@ -456,9 +453,9 @@ HTTP Digest authentication is used by Proxy Servers to authenticate the caller A
      |                        |
 ```
 
-   In this scenario, Alice completes a call to Bob directly.
+В этом сценарии Алиса выполняет вызов Боба напрямую.
 
-   Детали сообщения:
+Детали сообщения:
 
 ```
    F1 INVITE Alice -> Bob
@@ -527,12 +524,12 @@ HTTP Digest authentication is used by Proxy Servers to authenticate the caller A
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* RTP streams are established between Alice and Bob */
+   /* Потоки RTP устанавливаются между Alice и Bob. */
 
-   /* Bob Hangs Up with Alice. Note that the CSeq is NOT 2, since
-      Alice and Bob maintain their own independent CSeq counts.
-      (The INVITE was request 1 generated by Alice, and the BYE is
-      request 1 generated by Bob) */
+   /* Bob вешает трубку с Alice. Обратите внимание, что CSeq НЕ равен 2,
+	    поскольку Alice и Bob поддерживают свои собственные независимые
+			счетчики CSeq. (INVITE - это запрос 1, сгенерированный Алисой,
+			а BYE - это запрос 1, сгенерированный Бобом) */
 
    F5 BYE Bob -> Alice
 
@@ -597,9 +594,9 @@ HTTP Digest authentication is used by Proxy Servers to authenticate the caller A
      |                |                |                |
 ```
 
-In this scenario, Alice completes a call to Bob using two proxies Proxy 1 and Proxy 2.  The initial INVITE (F1) contains a pre-loaded Route header with the address of Proxy 1 (Proxy 1 is configured as a default outbound proxy for Alice).  The request does not contain the Authorization credentials Proxy 1 requires, so a 407 Proxy Authorization response is sent containing the challenge information. A new INVITE (F4) is then sent containing the correct credentials and the call proceeds.  The call terminates when Bob disconnects by initiating a BYE message.
+В этом сценарии Alice выполняет вызов Bob, используя два прокси-сервера `Proxy 1` и `Proxy 2`. Первоначальное сообщение `INVITE` (F1) содержит предварительно загруженный заголовок `Route` с адресом `Proxy 1` (Proxy 1 настроен как исходящий прокси по умолчанию для Alice.). Запрос не содержит учетных данных авторизации, которые требуются `Proxy 1`, поэтому отправляется ответ `407 Proxy Authorization`, содержащий информацию о запросе. Затем отправляется новое сообщение `INVITE` (F4) с правильными учетными данными и вызов продолжается. Вызов завершается, когда Боб отключается, отправляя сообщение `BYE`.
 
-Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it is present in all subsequent message exchanges.  Proxy 2 also inserts itself into the Record-Route header.  The ACK (F15) and BYE (F18) both have a Route header.
+Proxy 1 вставляет заголовок `Record-Route` в сообщение `INVITE`, чтобы гарантировать его присутствие во всех последующих обменах сообщениями. Proxy 2 также вставляется в заголовок `Record-Route`. `ACK` (F15) и `BYE` (F18) имеют заголовок `Route`.
 
 Детали сообщения:
 
@@ -626,7 +623,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 1 challenges Alice for authentication */
+   /* Proxy 1 запрашивает у Alice аутентификацию */
 
    F2 407 Proxy Authorization Required Proxy 1 -> Alice
 
@@ -653,8 +650,8 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* Alice responds be re-sending the INVITE with authentication
-      credentials in it. */
+   /* Alice в ответ повторно отправляет INVITE с учетными
+	    данными для аутентификации. */
 
    F4 INVITE Alice -> Proxy 1
 
@@ -683,9 +680,8 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 1 accepts the credentials and forwards the INVITE to Proxy
-   2.  Client for Alice prepares to receive data on port 49172 from the
-   network. */
+   /* Proxy 1 принимает учетные данные и пересылает INVITE на Proxy 2.
+	    Клиент для Алисы готовится к приему данных на порт 49172 из сети. */
 
    F5 INVITE Proxy 1 -> Proxy 2
 
@@ -1527,7 +1523,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    Content-Length: 0
 ```
 
-3.4.  Успешный сеанс с отказом прокси-сервера
+### 3.4.  Успешный сеанс с отказом прокси-сервера
 
 ```
     Alice           Proxy 1          Proxy 2            Bob
@@ -1922,7 +1918,7 @@ In this scenario, Alice completes a call to Bob via a Proxy Server. Alice is con
    Content-Length: 0
 ```
 
-### 3.5.  Сеанс через SIP ALG
+### 3.5. Сеанс через SIP ALG
 
 ```
    Alice             ALG           Proxy 2            Bob
@@ -1952,11 +1948,11 @@ In this scenario, Alice completes a call to Bob via a Proxy Server. Alice is con
      |                |                                 |
 ```
 
-Alice completes a call to Bob through a ALG (Application Layer Gateway) and a SIP Proxy.  The routing through the ALG is accomplished using a pre-loaded Route header in the INVITE F1.  Note that the media stream setup is not end-to-end - the ALG terminates both media streams and bridges them.  This is done by the ALG modifying the SDP in the INVITE (F1) and 200 OK (F10) messages, and possibly any 18x or ACK messages containing SDP.
+Alice совершает вызов Bob через ALG (шлюз прикладного уровня) и SIP-прокси. Маршрутизация через ALG выполняется с помощью предварительно загруженного заголовка `Route` в `INVITE` F1. Обратите внимание, что настройка медиапотока не является сквозной - ALG терминирует оба медиапотока и соединяет их. Это выполняется ALG изменением SDP в `INVITE` (F1) и сообщением `200 ОК` (F10), и, возможно, любым 18-кратным или сообщением `ACK`, содержащих SDP.
 
-In addition to firewall traversal, this Back-to-Back User Agent (B2BUA) could be used as part of an anonymizer service (in which all identifying information on Alice would be removed), or to perform codec media conversion, such as mu-law to A-law conversion of PCM on an international call.
+В дополнение к обходу брандмауэра этот агент пользователя back-to-Back (B2BUA) может использоваться как часть службы анонимайзера (в которой вся идентифицирующая информация об Alice будет удалена) или для выполнения преобразования кодека мультимедиа, такого как преобразование mu-law в A-law PCM при международном вызове.
 
-Also note that Proxy 2 does not Record-Route in this call flow.
+Также обратите внимание, что Proxy 2 не записывает Record-Route в этом потоке вызовов.
 
 Детали сообщения:
 
