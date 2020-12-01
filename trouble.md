@@ -72,3 +72,9 @@ OPTIONS="-d"
 # cat /etc/sysconfig/fop2
 OPTIONS="--daemon --iface eth2"
 ```
+
+#### [2020-12-01 10:33:05] WARNING[24993] res_pjsip_registrar.c: Endpoint 'anonymous' has no configured AORs
+
+Пофиксилось изменением порядка **Match Inbound Authentication** с **Auth Username** на **Username**
+
+Прим: дело было с GSM-шлюзом KTS, который регистрировался на FreePBX.
