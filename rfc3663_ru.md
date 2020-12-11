@@ -925,12 +925,12 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    CSeq: 2 ACK
    Content-Length: 0
 
-   /* RTP streams are established between Alice and Bob */
+	 /* RTP-потоки RTP устанавливаются между Алисой и Бобом */
 
-   /* Bob Hangs Up with Alice. */
+	 /* Боб вешает трубку вместе с Алисой. */
 
-   /* Again, note that the CSeq is NOT 3.  Alice and Bob maintain
-      their own separate CSeq counts */
+	 /* Опять же, обратите внимание, что CSeq не равен 3. Алиса и Боб сохраняют
+	 их собственные отдельные счетчики CSeq */
 
    F18 BYE Bob -> Proxy 2
 
@@ -1060,9 +1060,9 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
        |<====================================>|
 ```
 
-In this scenario, Alice completes a call to Bob using two proxies Proxy 1 and Proxy 2.  Alice has valid credentials in both domains. Since the initial INVITE (F1) does not contain the Authorization credentials Proxy 1 requires, so a 407 Proxy Authorization response is sent containing the challenge information. A new INVITE (F4) is then sent containing the correct credentials and the call proceeds after Proxy 2 challenges and receives valid credentials.  The call terminates when Bob disconnects by initiating a BYE message.
+В этом сценарии Alice выполняет вызов Боба, используя два прокси-сервера `Proxy 1` и `Proxy 2`. Alice имеет действительные учетные данные в обоих доменах. Поскольку начальный `INVITE (F1)` не содержит учетных данных авторизации, необходимых `Proxy 1`, поэтому отправляется ответ `407 Proxy Authorization`, содержащий информацию о вызове. Затем отправляется новый запрос `INVITE (F4)`, содержащий действительные учетные данные, и вызов продолжается после запроса `Proxy 2` и получения действительных учетных данных. Вызов завершается, когда Боб отключается, инициируя сообщение `BYE`.
 
-Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it is present in all subsequent message exchanges.  Proxy 2 also inserts itself into the Record-Route header.
+`Proxy 1` вставляет заголовок Record-Route в сообщение `INVITE`, чтобы убедиться, что он присутствует во всех последующих обменах сообщениями. `Proxy 2` также вставляет себя в заголовок Record-Route.
 
 Детали сообщения
 
@@ -1089,7 +1089,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 1 challenges Alice for authentication */
+   /* Proxy 1 запрашивает у Alice аутентификацию */
 
 
    F2 407 Proxy Authorization Required Proxy 1 -> Alice
@@ -1117,10 +1117,9 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* Alice responds be re-sending the INVITE with authentication
-      credentials in it.  The same Call-ID is used, so the CSeq is
-      increased. */
-
+   /* Alice отвечает, повторно отправляя INVITE с учетными данными
+	 аутентификации в нем. Используется тот же Call-ID, поэтому
+	 CSeq увеличивается. */
 
    F4 INVITE Alice -> Proxy 1
 
@@ -1149,9 +1148,8 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 1 accepts the credentials and forwards the INVITE to Proxy
-   2.  Client for Alice prepares to receive data on port 49172 from the
-   network. */
+   / * Proxy 1 принимает учетные данные и пересылает INVITE на Proxy 2.
+	 Клиент Alice готовится к приему данных на порт 49172 из сети. */
 
    F5 100 Trying Proxy 1 -> Alice
 
@@ -1189,8 +1187,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 2 challenges Alice for authentication */
-
+   /* Proxy 2 запрашивает у Alice аутентификацию */
 
    F7 407 Proxy Authorization Required Proxy 2 -> Proxy 1
 
@@ -1570,7 +1567,7 @@ Proxy 1 inserts a Record-Route header into the INVITE message to ensure that it 
 
 ```
 
-In this scenario, Alice completes a call to Bob via a Proxy Server. Alice is configured for a primary SIP Proxy Server Proxy 1 and a secondary SIP Proxy Server Proxy 2 (Or is able to use DNS SRV records to locate Proxy 1 and Proxy 2).  Alice has valid credentials for both domains.  Proxy 1 is out of service and does not respond to INVITEs (it is reachable, but unresponsive).  Alice then completes the call to Bob using Proxy 2.
+В этом сценарии Alice выполняет вызов Боба через прокси-сервер. Alice настроена для первичного прокси-сервера SIP `Proxy 1` и вторичного прокси-сервера SIP `Proxy 2` (или может использовать записи DNS SRV для определения местоположения `Proxy 1` и `Proxy 2`). У Алисы есть действительные учетные данные для обоих доменов. `Proxy 1` не обслуживается и не отвечает на сообщения `INVITE` (доступен, но не отвечает). Затем Alice завершает вызов Боба, используя `Proxy 2`.
 
 Детали сообщения:
 
@@ -1945,11 +1942,11 @@ In this scenario, Alice completes a call to Bob via a Proxy Server. Alice is con
      |                |                                 |
 ```
 
-Alice совершает вызов Bob через ALG (шлюз прикладного уровня) и SIP-прокси. Маршрутизация через ALG выполняется с помощью предварительно загруженного заголовка `Route` в `INVITE` F1. Обратите внимание, что настройка медиапотока не является сквозной - ALG терминирует оба медиапотока и соединяет их. Это выполняется ALG изменением SDP в `INVITE` (F1) и сообщением `200 ОК` (F10), и, возможно, любым 18-кратным или сообщением `ACK`, содержащих SDP.
+Alice совершает вызов Bob через ALG (шлюз прикладного уровня) и SIP-прокси. Маршрутизация через ALG выполняется с помощью предварительно загруженного заголовка `Route` в `INVITE` F1. Обратите внимание, что настройка медиапотока не является сквозной - ALG терминирует оба медиапотока и соединяет их. Это выполняется ALG изменением SDP в `INVITE` (F1) и сообщением `200 ОК` (F10), и, возможно, любым 18-кратным сообщением `ACK`, содержащих SDP.
 
 В дополнение к обходу брандмауэра этот агент пользователя back-to-Back (B2BUA) может использоваться как часть службы анонимайзера (в которой вся идентифицирующая информация об Alice будет удалена) или для выполнения преобразования кодека мультимедиа, такого как преобразование mu-law в A-law PCM при международном вызове.
 
-Также обратите внимание, что Proxy 2 не записывает Record-Route в этом потоке вызовов.
+Также обратите внимание, что `Proxy 2` не записывает Record-Route в этом потоке вызовов.
 
 Детали сообщения:
 
