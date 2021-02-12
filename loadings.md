@@ -1,4 +1,4 @@
-# Загрузки
+# Загрузки и полезные ресурсы
 
 ## Asterisk & FreePBX
 
@@ -60,8 +60,8 @@
 
 ## Обучение и сертификация
 
-* [Курсы от Voxlink](https://asterisker.ru/courses/)
+* [Офлайн-курсы от Voxlink](https://asterisker.ru/courses/)
 
 * [Онлайн-курс на английском от Sangoma: Asterisk и FreePBX](https://training.sangoma.com/)
 
-* [Двухнедельный онлайн курс по Asterisk От Мерион Нетворкс](https://wiki.merionet.ru/onlajn-kurs-po-asterisk//?utm_source=knowledgebase&utm_content=/ip-telephoniya/)
+* [Двухнедельный онлайн курс по Asterisk От Мерион Нетворкс](https://wiki.merionet.ru/onlajn-kurs-po-asterisk/)
