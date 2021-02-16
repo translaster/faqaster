@@ -58,6 +58,8 @@
 
 * [Telegram-бот для озвучки](https://t.me/VoiceKitBot)
 
+* [RHVoice — единственный российский синтезатор речи с открытым исходным кодом](https://rhvoice.su/)
+
 ## Обучение и сертификация
 
 * [Офлайн-курсы от Voxlink](https://asterisker.ru/courses/)
