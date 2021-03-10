@@ -16,6 +16,8 @@
 
 * [Документация на wiki Asterisk](https://wiki.asterisk.org/wiki/display/AST/Asterisk+Exported+Documentation)
 
+* Вики на русском по [Asterisk](https://asterisk-pbx.ru/wiki/asterisk/asterisk) и [FreePBX](https://asterisk-pbx.ru/wiki/freepbx/freepbx)
+
 * [База знаний Asterisk.ru](http://asterisk.ru/knowledgebase)
 
 * [База знаний Voxlink](https://voxlink.ru/kb/)
