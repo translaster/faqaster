@@ -40,19 +40,21 @@
 
 ## Софтфоны
 
-* [Microsip](https://www.microsip.org/)
+* [Microsip (Windows)](https://www.microsip.org/)
 
-* [Zoiper](https://www.zoiper.com/en/voip-softphone/download/current)
+* [Zoiper (WIndows, Mac, Linux, Android, iOS)](https://www.zoiper.com/en/voip-softphone/download/current)
 
-* [Ekiga](https://www.ekiga.org/)
+* [Ekiga (Windows, Linux)](https://www.ekiga.org/)
 
-* [Linphone](https://www.linphone.org/)
+* [Linphone (WIndows, Mac, Linux, Android, iOS)](https://www.linphone.org/)
 
-* [3CXPhone](https://www.3cx.com/voip/softphone/)
+* [3CXPhone (Windows)](https://www.3cx.com/voip/softphone/)
 
-* [Grandstream Wave](https://grandstream-russia.ru/products/ip_pbx/wave.html)
+* [Grandstream Wave (Android)](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
-* [CSipSimple (4PDA)](https://4pda.ru/forum/index.php?showtopic=197229)
+* [CSipSimple (4PDA) (Android)](https://4pda.ru/forum/index.php?showtopic=197229)
+
+* [Sipnetic (Android)](https://www.sipnetic.com/)
 
 ## Полезные ресурсы
 
