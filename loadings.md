@@ -8,6 +8,8 @@
 
 * [FreePBX Distro](https://www.freepbx.org/downloads/)
 
+* [VitalPBX](https://www.vitalpbx.org/)
+
 * [Языковой пакет](https://github.com/pbxware/asterisk-sounds/tarball/master)
 
 * [Расширенный языковой пакет](https://github.com/pbxware/asterisk-sounds-additional/tarball/master)
