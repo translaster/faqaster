@@ -11,3 +11,8 @@
 [PBXware](https://www.pbxware.ru/wiki/asterisk_managment_interface_ami/)
 
 [Вебинар: AMI: как программисту управлять Asterisk-ом через API](https://www.youtube.com/watch?v=g1oUKzWU2og&t=2714s)
+
+## Создание DEB-пакета
+
+[Создание RPM или DEB пакетов с Checkinstall в Linux (хорошая статья с параметрами, хотя многое не объясняется)](https://linux-notes.org/sozdanie-rpm-ili-deb-paketov-s-checkinstall-v-linux/)
+[Создание пакетов .deb с помощью Checkinstall (корявый перевод - многое объясняется, но без параметров)](https://blog.desdelinux.net/ru/creando-paquetes-deb-con-checkinstall/)
