@@ -54,7 +54,7 @@
 
 * [Grandstream Wave (Android)](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
-* [CSipSimple (4PDA) (Android)](https://4pda.ru/forum/index.php?showtopic=197229)
+* [CSipSimple (4PDA) (Android)](https://4pda.to/forum/index.php?showtopic=197229)
 
 * [Sipnetic (Android)](https://www.sipnetic.com/)
 
