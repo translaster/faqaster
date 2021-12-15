@@ -20,3 +20,9 @@
 ## Изменение размера диска в Linux
 
 [Расширение диска или раздела Linux](https://www.dmosk.ru/miniinstruktions.php?mini=expand-linux-disk)
+
+## Аппараты
+
+### Yealink
+
+[Перегружаем "одним кликом" все офисные телефоны yealink](https://gosnorkokontrol.livejournal.com/58380.html)
