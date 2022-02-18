@@ -54,7 +54,7 @@
 
 * [Linphone (WIndows, Mac, Linux, Android, iOS)](https://www.linphone.org/)
 
-* [3CXPhone (Windows)](https://www.3cx.com/voip/softphone/)
+* [3CXPhone (Windows)](https://www.3cx.com/voip/softphone/) | [3CSPhone for Android на 4pda.to](https://4pda.to/forum/index.php?showtopic=186312)
 
 * [Grandstream Wave (Android)](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
