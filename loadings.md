@@ -46,6 +46,10 @@
 
 * [Zoiper (WIndows, Mac, Linux, Android, iOS)](https://www.zoiper.com/en/voip-softphone/download/current)
 
+* [Bria](https://www.counterpath.com/softphone-clients/) [Bria на 4pda.to](https://4pda.to/forum/index.php?showtopic=243439)
+
+* [Media5-fone (iOS, Android)](http://www.media5corp.com/) [Android на 4pda.to](https://4pda.to/forum/index.php?showtopic=548642)
+
 * [Ekiga (Windows, Linux)](https://www.ekiga.org/)
 
 * [Linphone (WIndows, Mac, Linux, Android, iOS)](https://www.linphone.org/)
