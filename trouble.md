@@ -87,3 +87,9 @@ Huawei E1550 и, возможно, e170 е171; модуль `chan_dongle`, пр�
 #### При вызове From: Anonymous <sip:anonymous@localhost> и с него вызов не проходит
 
 В настройках линии включено `Block CID Setting:` (Скрытие номера) (Linksys SPA8000)
+
+#### Как конвертировать аудиофайлы для asterisk
+
+* [Ссылка 1](https://www.voip-info.org/convert-wav-audio-files-for-use-in-asterisk/)
+
+* [Ссылка 2](https://alexeyka.zantsev.com/?p=839)
