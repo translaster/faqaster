@@ -40,6 +40,8 @@
 
 * [Инструкция FreePBX](http://atsip.ru/images/docs/freepbx-manual.pdf)
 
+* [Руководство по FreePBX 14](http://atsip.ru/images/Asterisk4ED/FreePBX_Guide.pdf)
+
 ## Софтфоны
 
 * [Microsip (Windows)](https://www.microsip.org/)
