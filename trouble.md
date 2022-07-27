@@ -105,3 +105,13 @@ exten => _6XXX,1,Dial(${PJSIP_DIAL_CONTACTS(${EXTEN})})
 #### Где взять коды регионов и сотовый операторов?
 
 Раньше они были на сайте Россвязи, а сейчас в [Реестре открытых данных Минцифры России](http://opendata.digital.gov.ru/)
+
+#### Есть ли аналог callbackexten для PJSIP?
+
+Есть
+
+```
+support_path=yes
+line=yes
+endpoint=<номер>
+```
