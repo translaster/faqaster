@@ -136,7 +136,7 @@ Copyright (C) The Internet Society (2003). Все права защищены.
      |                               |
 ```
 
-Bob отправляет запрос SIP `REGISTER` на SIP-сервер. Запрос включает в себя список контактов пользователя. Этот поток показывает использование HTTP дайджест для аутентификации с использованием TLS транспорта. Транспорт TLS используется из-за отсутствия защиты целостности в дайджесте HTTP и опасности захвата регистрации без него, как описано в RFC 3261 [1].
+Bob отправляет запрос SIP `REGISTER` на SIP-сервер. Запрос включает в себя список контактов пользователя. Этот поток показывает использование HTTP дайджест для аутентификации с использованием TLS транспорта. Транспорт TLS используется из-за отсутствия защиты целостности в дайджесте HTTP и опасности захвата регистрации без него, как описано в RFC 3261[1].
 Сервер SIP предоставляет Бобу вызов. Боб вводит свой действительный идентификатор пользователя и пароль. SIP-клиент Боба шифрует информацию о пользователе в соответствии с вызовом, выданным SIP-сервером, и отправляет ответ на SIP-сервер. SIP-сервер проверяет учетные данные пользователя. Он регистрирует пользователя в своей базе данных контактов и возвращает ответ (200 OK) SIP-клиенту Боба. Ответ включает текущий список контактов пользователя в заголовках контактов. Показанный формат аутентификации - дайджест HTTP. Предполагается, что Боб ранее не регистрировался на этом сервере.
 
 Детали сообщения:
@@ -213,7 +213,7 @@ Bob отправляет запрос SIP `REGISTER` на SIP-сервер. За
 
 Боб отправляет запрос SIP `REGISTER` на SIP-сервер. Запрос Боба включает в себя обновленный список контактов. Поскольку пользователь уже прошел проверку подлинности на сервере - он предоставляет учетные данные проверки подлинности вместе с запросом и не оспаривается сервером. SIP-сервер проверяет учетные данные пользователя. Он регистрирует пользователя в своей базе данных контактов, обновляет список контактов пользователя и возвращает ответ (`200 OK`) SIP-клиенту Боба. Ответ включает текущий список контактов пользователя в заголовках контактов.
 
-Детали сообщения
+Детали сообщения:
 
 ```
    F1 REGISTER Bob -> SIP Server
@@ -261,7 +261,7 @@ Bob отправляет запрос SIP `REGISTER` на SIP-сервер. За
 
 Боб отправляет запрос регистрации, не содержащий заголовков контактов, на прокси-сервер, указывая, что пользователь хочет запросить у сервера текущий список контактов пользователя. Поскольку пользователь уже прошел проверку подлинности на сервере - он предоставляет учетные данные аутентификации вместе с запросом и не оспаривается сервером. SIP-сервер проверяет учетные данные пользователя. Сервер возвращает ответ (`200 OK`), который включает текущий список регистрации пользователя в заголовках контактов.
 
-Детали сообщения
+Детали сообщения:
 
 ```
    F1 REGISTER Bob -> SIP Server
@@ -308,7 +308,7 @@ Bob отправляет запрос SIP `REGISTER` на SIP-сервер. За
 
 Боб хочет отменить его регистрацию на SIP-сервере. Боб отправляет SIP-запрос `REGISTER` на SIP-сервер. Срок действия запроса равен `0` и применяется ко всем существующим контактам. Поскольку пользователь уже прошел аутентификацию на сервере - он предоставляет учетные данные аутентификации вместе с запросом и не оспаривается сервером. SIP-сервер проверяет учетные данные пользователя. Он очищает список контактов пользователя и возвращает ответ (`200 OK`) SIP-клиенту Боба.
 
-Детали сообщения
+Детали сообщения:
 
 ```
    F1 REGISTER Bob -> SIP Server
@@ -1064,7 +1064,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
 
 `Proxy 1` вставляет заголовок Record-Route в сообщение `INVITE`, чтобы убедиться, что он присутствует во всех последующих обменах сообщениями. `Proxy 2` также вставляет себя в заголовок Record-Route.
 
-Детали сообщения
+Детали сообщения:
 
 ```
    F1 INVITE Alice -> Proxy 1
@@ -1218,8 +1218,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    CSeq: 2 ACK
    Content-Length: 0
 
-   /* Proxy 1 forwards the challenge to Alice for authentication from
-   Proxy 2 */
+   /* Proxy 1 пересылает вызов Алисе для аутентификации от Proxy 2 */
 
 
    F9 407 Proxy Authorization Required Proxy 1 -> Alice
@@ -1254,8 +1253,8 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
     response="42ce3cef44b22f50c6a6071bc8"
    Content-Length: 0
 
-   /* Alice responds be re-sending the INVITE with authentication
-   credentials for Proxy 1 AND Proxy 2.  */
+	 /* Алиса отвечает повторной отправкой INVITE с данными аутентификации
+   для Proxy 1 и Proxy 2. */
 
 
    F11 INVITE Alice -> Proxy 1
@@ -1288,8 +1287,8 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 1 finds its credentials and authorizes Alice, forwarding the
-   INVITE to Proxy.  */
+   /* Proxy 1 находит свои учетные данные и авторизует Алису,
+	 перенаправляя INVITE на прокси. */
 
    F12 100 Trying Proxy 1 -> Alice
 
@@ -1331,8 +1330,8 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 2 finds its credentials and authorizes Alice, forwarding the
-   INVITE to Bob.  */
+   /* Proxy 2 находит свои учетные данные и авторизует Алису,
+	 пересылая INVITE Бобу. */
 
    F14 100 Trying Proxy 2 -> Proxy 1
 
@@ -1375,7 +1374,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Bob answers the call immediately */
+	 /* Боб немедленно отвечает на звонок */
 
    F16 200 OK Bob -> Proxy 2
 
@@ -1623,8 +1622,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
 
    Same as Message F1
 
-   /* Alice gives up on the unresponsive proxy */
-
+   /* Алиса отказывается от не отвечающего прокси-сервера */
 
    F8 INVITE Alice -> Proxy 2
 
@@ -1647,7 +1645,7 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 2 challenges Alice for authentication */
+	 /* Proxy 2 вызывает Алису для аутентификации */
 
 
    F9 407 Proxy Authorization Required Proxy 2 -> Alice
@@ -1677,8 +1675,8 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* Alice responds by re-sending the INVITE with authentication
-   credentials in it.  */
+   /* Алиса отвечает повторной отправкой INVITE с данными
+	 аутентификации.  */
 
 
    F11 INVITE Alice -> Proxy 2
@@ -1707,9 +1705,8 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Proxy 2 accepts the credentials and forwards the INVITE to Bob.
-   Client for Alice prepares to receive data on port 49172 from the
-   network.
+	 /* Прокси 2 принимает учетные данные и пересылает INVITE Бобу.
+   Клиент Алисы готовится к приему данных на порт 49172 из сети.
    */
 
 
@@ -1855,9 +1852,9 @@ Proxy 1 вставляет заголовок `Record-Route` в сообщени
    CSeq: 2 ACK
    Content-Length: 0
 
-   /* RTP streams are established between Alice and Bob */
+	 /* Между Алисой и Бобом устанавливаются потоки RTP */
 
-   /* Bob Hangs Up with Alice. */
+   /* Боб завершает вызов с Алисой. */
 
 
    F20 BYE Bob -> Proxy 2
@@ -1978,8 +1975,7 @@ Alice совершает вызов Bob через ALG (шлюз приклад�
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* Client for Alice prepares to receive data on port 49172 from the
-   network. */
+   /* Клиент Алисы готовится к приему данных на порт 49172 из сети. */
 
 
    F2 INVITE SIP ALG -> Proxy 2
@@ -2193,8 +2189,8 @@ Alice совершает вызов Bob через ALG (шлюз приклад�
    m=audio 1734 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* The ALG prepares to proxy packets from 192.0.2.128/
-      1734 to 192.0.2.201/3456 */
+	 /* ALG готовится проксировать пакеты от 192.0.2.128/
+      1734 до 192.0.2.201/3456 */
 
 
    F12 ACK Alice -> SIP ALG
@@ -2223,10 +2219,10 @@ Alice совершает вызов Bob через ALG (шлюз приклад�
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* RTP streams are established between Alice and the ALG and
-   between the ALG and B*/
+	 /* Потоки RTP устанавливаются между Алисой и ALG и
+   между ALG и Bob */
 
-   /* Alice Hangs Up with Bob. */
+   /* Алиса завершает вызов с Бобом. */
 
 
    F14 BYE Alice -> SIP ALG
@@ -2315,9 +2311,9 @@ Alice совершает вызов Bob через ALG (шлюз приклад�
      |                                 |                |
 ```
 
-In this scenario, Alice places a call to Bob using first a Redirect server then a Proxy Server.  The INVITE message is first sent to the Redirect Server.  The Server returns a 302 Moved Temporarily response (F2) containing a Contact header with Bob's current SIP address. Alice then generates a new INVITE and sends to Bob via the Proxy Server and the call proceeds normally.  In this example, no SDP is present in the INVITE, so the SDP is carried in the ACK message.
+В этом сценарии Алиса совершает звонок Бобу, используя сначала сервер перенаправления, а затем прокси-сервер. Сообщение `INVITE` сначала отправляется на сервер перенаправления. Сервер возвращает ответ `302 Moved Temporarily (F2)`, содержащий заголовок `Contact` с текущим SIP-адресом Боба. Затем Алиса генерирует новый `INVITE` и отправляет его Бобу через прокси-сервер, и звонок проходит нормально.  В этом примере в `INVITE` нет SDP, поэтому SDP передается в сообщении `ACK`.
 
-The call is terminated when Bob sends a BYE message.
+Вызов завершается, когда Боб посылает сообщение `BYE`.
 
 Детали сообщения:
 
@@ -2478,7 +2474,7 @@ The call is terminated when Bob sends a BYE message.
    m=audio 3456 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* ACK contains SDP of Alice since none present in INVITE */
+	 /* ACK содержит SDP Алисы, поскольку в INVITE его нет */
 
 
    F11 ACK Alice -> Proxy 3
@@ -2525,9 +2521,9 @@ The call is terminated when Bob sends a BYE message.
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /* RTP streams are established between Alice and Bob */
+	 /* Между Алисой и Бобом устанавливаются потоки RTP */
 
-   /* Bob Hangs Up with Alice. */
+   /* Боб завершает вызов с Алисой. */
 
 
    F13 BYE Bob -> Proxy 3
@@ -2619,7 +2615,7 @@ The call is terminated when Bob sends a BYE message.
         |                                         |
 ```
 
-This example shows a session in which the media changes midway through the session.  When Bob's IP address changes during the session, Bob sends a re-INVITE containing a new Contact and SDP (version number incremented) information to A.  In this flow, the proxy does not Record-Route so is not in the SIP messaging path after the initial exchange.
+В этом примере показана сессия, в которой медианоситель меняется в середине сессии. Когда IP-адрес Боба меняется во время сессии, Боб посылает повторный `INVITE`, содержащий новый контакт и информацию SDP (номер версии увеличивается) на A. В этом потоке прокси не записывает маршрутизацию, поэтому не находится в пути обмена сообщениями SIP после первоначального обмена.
 
 Детали сообщения:
 
@@ -2766,10 +2762,9 @@ This example shows a session in which the media changes midway through the sessi
    CSeq: 1 ACK
    Content-Length: 0
 
-   /* RTP streams are established between Alice and Bob */
+	 /* Между Алисой и Бобом устанавливаются потоки RTP */
 
-   /* Bob changes IP address and re-INVITEs Alice with new Contact and
-   SDP */
+   /* Боб меняет IP-адрес и шлёт re-INVITE Алисе с новым контактом и SDP */
 
 
    F9 INVITE Bob -> Alice
@@ -2828,9 +2823,9 @@ This example shows a session in which the media changes midway through the sessi
    CSeq: 14 ACK
    Content-Length: 0
 
-   /* New RTP stream established between Alice and Bob */
+	 /* Новый поток RTP установлен между Алисой и Бобом */
 
-   /* Alice hangs up with Bob */
+   /* Алиса завершает вызов с Бобом */
 
 
    F12 BYE Alice -> Bob
@@ -2896,9 +2891,9 @@ This example shows a session in which the media changes midway through the sessi
      |                |                |                |
 ```
 
-In this scenario, Alice gives up on the call before Bob answers (sends a 200 OK response).  Alice sends a CANCEL (F9) since no final response had been received from Bob.  If a 200 OK to the INVITE had crossed with the CANCEL, Alice would have sent an ACK then a BYE to Bob in order to properly terminate the call.
+В этом сценарии Алиса прекращает разговор до того, как Боб ответит (отправит ответ `200 OK`).  Алиса посылает `CANCEL (F9)`, поскольку от Боба не было получено окончательного ответа. Если бы `200 OK` на `INVITE` пересекся с `CANCEL`, Алиса отправила бы `ACK`, а затем `BYE` Бобу, чтобы правильно завершить вызов.
 
-Note that the CANCEL message is acknowledged with a 200 OK on a hop by hop basis, rather than end to end.
+Обратите внимание, что сообщение `CANCEL` подтверждается сообщением `200 OK` по принципу hop-by-hop, а не end-to-end.
 
 Детали сообщения:
 
@@ -2930,8 +2925,7 @@ Note that the CANCEL message is acknowledged with a 200 OK on a hop by hop basis
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /*Client for Alice prepares to receive data on port 49172 from the
-   network.*/
+   /* Клиент Алисы готовится к приему данных на порт 49172 из сети. */
 
 
    F2 INVITE Proxy 1 -> Proxy 2
@@ -3242,7 +3236,7 @@ Note that the CANCEL message is acknowledged with a 200 OK on a hop by hop basis
      |                |                |                |
 ```
 
-In this scenario, Bob is busy and sends a 486 Busy Here response to Alice's INVITE.  Note that the non-2xx response is acknowledged on a hop-by-hop basis instead of end-to-end.  Also note that many SIP UAs will not return a 486 response, as they have multiple line and other features.
+В этом сценарии Боб занят и посылает ответ `486 Busy Here` на `INVITE` Алисы.  Обратите внимание, что ответ не-2xx подтверждается по принципу hop-by-hop, а не из конца в конец. Также обратите внимание, что многие SIP UA не будут возвращать ответ `486`, поскольку они имеют несколько линий и другие функции.
 
 Детали сообщения:
 
@@ -3274,8 +3268,7 @@ In this scenario, Bob is busy and sends a 486 Busy Here response to Alice's INVI
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /*Client for Alice prepares to receive data on port 49172 from the
-   network.*/
+   /* Клиент Алисы готовится к приему данных на порт 49172 из сети. */
 
 
    F2 INVITE Proxy 1 -> Proxy 2
@@ -3468,7 +3461,7 @@ In this scenario, Bob is busy and sends a 486 Busy Here response to Alice's INVI
      |                |                |                |
 ```
 
-In this example, there is no response from Bob to Alice's INVITE messages being re-transmitted by Proxy 2.  After the sixth re-transmission, Proxy 2 gives up and sends a 480 No Response to Alice.
+В этом примере Боб не отвечает на сообщения `INVITE` Алисы, повторно передаваемые `Proxy 2`. После шестой повторной передачи, `Proxy 2` отказывает и посылает Алисе сообщение `480 No Response`.
 
 Детали сообщения:
 
@@ -3500,8 +3493,7 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /*Client for Alice prepares to receive data on port 49172 from the
-   network.*/
+   /* Клиент Алисы готовится к приему данных на порт 49172 из сети. */
 
 
    F2 INVITE Proxy 1 -> Proxy 2
@@ -3612,7 +3604,7 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
 
    Resend of Message F4
 
-   /* Proxy 2 gives up */
+	 /* Proxy 2 отказывает */
 
 
    F12 480 No Response Proxy 2 -> Proxy 1
@@ -3627,7 +3619,6 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
    Call-ID: 2xTb9vxSit55XU7p8@atlanta.example.com
    CSeq: 1 INVITE
    Content-Length: 0
-
 
    F13 ACK Proxy 1 -> Proxy 2
 
@@ -3695,7 +3686,7 @@ In this example, there is no response from Bob to Alice's INVITE messages being 
      |                |                |                |
 ```
 
-In this scenario, Bob initially sends a 180 Ringing response to Alice, indicating that alerting is taking place.  However, then a 480 Unavailable is then sent to Alice.  This response is acknowledged then proxied back to Alice.
+В этом сценарии Боб сначала посылает Алисе ответ `180 Ringing`, указывая, что происходит оповещение. Однако затем Алисе отправляется ответ `480 Unavailable`. Этот ответ подтверждается и передается обратно Алисе.
 
 Детали сообщения:
 
@@ -3728,8 +3719,7 @@ In this scenario, Bob initially sends a 180 Ringing response to Alice, indicatin
    m=audio 49172 RTP/AVP 0
    a=rtpmap:0 PCMU/8000
 
-   /*Client for Alice prepares to receive data on port 49172 from the
-   network.*/
+   /* Клиент Алисы готовится к приему данных на порт 49172 из сети. */
 
 
    F2 INVITE Proxy 1 -> Proxy 2
@@ -3949,7 +3939,7 @@ In this scenario, Bob initially sends a 180 Ringing response to Alice, indicatin
 
 ## 4. Соображения безопасности
 
-Since this document contains examples of SIP session establishment, the security considerations in RFC 3261 [1] apply.  RFC 3261 describes the basic threats including registration hijacking, server impersonation, message body tampering, session modifying or teardown, and denial of service and amplification attacks.  The use of HTTP Digest as shown in this document provides one-way authentication and protection against replay attacks.  TLS transport is used in registration scenarios due to the lack of integrity protection in HTTP Digest and the danger of registration hijacking without it, as described in RFC 3261 [1].  A full discussion of the weaknesses of HTTP Digest is provided in RFC 3261 [1].  The use of TLS and the Secure SIP (sips) URI scheme provides a better level of security including two-way authentication.  S/MIME can provide end-to-end confidentiality and integrity protection of message bodies, as described in RFC 3261.
+Поскольку данный документ содержит примеры установления сеанса SIP, применяются соображения безопасности, изложенные в RFC 3261[1]. RFC 3261 описывает основные угрозы, включая перехват регистрации, выдачу себя за сервер, подделку тела сообщения, модификацию или разрыв сеанса, а также атаки типа "отказ в обслуживании" и "усиленные атаки".  Использование дайджеста HTTP, как показано в этом документе, обеспечивает одностороннюю аутентификацию и защиту от повторных атак. Транспорт TLS используется в сценариях регистрации из-за отсутствия защиты целостности в дайджесте HTTP и опасности перехвата регистрации без нее, как описано в RFC 3261[1].  Полное обсуждение недостатков дайджестов HTTP приведено в RFC 3261[1].  Использование TLS и схемы URI Secure SIP (sips) обеспечивает более высокий уровень безопасности, включая двустороннюю аутентификацию.  S/MIME может обеспечить сквозную конфиденциальность и защиту целостности тел сообщений, как описано в RFC 3261.
 
 ## 5. Ссылки
 
@@ -3978,25 +3968,25 @@ Since this document contains examples of SIP session establishment, the security
 
 ## 6. Заявление об интеллектуальной собственности
 
-The IETF takes no position regarding the validity or scope of any intellectual property or other rights that might be claimed to pertain to the implementation or use of the technology described in this document or the extent to which any license under such rights might or might not be available; neither does it represent that it has made any effort to identify any such rights.  Information on the IETF's procedures with respect to rights in standards-track and standards-related documentation can be found in BCP-11.  Copies of claims of rights made available for publication and any assurances of licenses to be made available, or the result of an attempt made to obtain a general license or permission for the use of such proprietary rights by implementors or users of this specificatio n can be obtained from the IETF Secretariat.
+IETF не занимает никакой позиции в отношении действительности или объема любых прав интеллектуальной собственности или других прав, которые могут быть заявлены как относящиеся к реализации или использованию технологии, описанной в данном документе, или степени, в которой может быть или не быть доступна любая лицензия на основании таких прав; она также не утверждает, что предприняла какие-либо усилия для выявления таких прав.  Информация о процедурах IETF в отношении прав на документацию, относящуюся к треку стандартов и стандартам, содержится в документе BCP-11.  Копии заявлений о правах, предоставленных для публикации, и любые заверения о лицензиях, которые будут предоставлены, или результат попытки получить общую лицензию или разрешение на использование таких прав собственности исполнителями или пользователями данной спецификации могут быть получены в Секретариате IETF.
 
-The IETF invites any interested party to bring to its attention any copyrights, patents or patent applications, or other proprietary rights which may cover technology that may be required to practice this standard.  Please address the information to the IETF Executive Director.
+IETF приглашает любую заинтересованную сторону довести до ее сведения любые авторские права, патенты или патентные заявки, или другие права собственности, которые могут охватывать технологию, которая может потребоваться для применения настоящего стандарта.  Пожалуйста, адресуйте информацию Исполнительному директору IETF.
 
 ## 7. Благодарности
 
-This document is has been a group effort by the SIP and SIPPING WGs. The authors wish to thank everyone who has read, reviewed, commented, or made suggestions to improve this document.
+Этот документ был подготовлен совместными усилиями рабочих групп SIP и SIPPING. Авторы хотят поблагодарить всех, кто читал, просматривал, комментировал или вносил предложения по улучшению этого документа.
 
-Thanks to Rohan Mahy, Adam Roach, Gonzalo Camarillo, Cullen Jennings, and Tom Taylor for their detailed comments during the final review. Thanks to Dean Willis for his early contributions to the development of this document.
+Спасибо Rohan Mahy, Adam Roach, Gonzalo Camarillo, Cullen Jennings и Tom Taylor за их подробные комментарии во время окончательного рассмотрения. Спасибо Dean Willis за его ранний вклад в разработку этого документа.
 
-The authors wish to thank Kundan Singh for performing parser validation of messages.
+Авторы выражают благодарность Kundan Singh за выполнение проверки синтаксического анализа сообщений.
 
-The authors wish to thank the following individuals for their participation in the review of this call flows document: Aseem Agarwal, Rafi Assadi, Ben Campbell, Sunitha Kumar, Jon Peterson, Marc Petit-Huguenin, Vidhi Rastogi, and Bodgey Yin Shaohua.
+Авторы выражают благодарность следующим лицам за их участие в рассмотрении данного документа о потоках вызовов: Aseem Agarwal, Rafi Assadi, Ben Campbell, Sunitha Kumar, Jon Peterson, Marc Petit-Huguenin, Vidhi Rastogi и Bodgey Yin Shaohua.
 
-The authors also wish to thank the following individuals for their assistance: Jean-Francois Mule, Hemant Agrawal, Henry Sinnreich, David Devanatham, Joe Pizzimenti, Matt Cannon, John Hearty, the whole MCI WorldCom IPOP Design team, Scott Orton, Greg Osterhout, Pat Sollee, Doug Weisenberg, Danny Mistry, Steve McKinnon, and Denise Ingram, Denise Caballero, Tom Redman, Ilya Slain, Pat Sollee, John Truetken, and others from MCI WorldCom, 3Com, Cisco, Lucent and Nortel.
+Авторы также хотели бы поблагодарить за помощь следующих лиц: Jean-Francois Mule, Hemant Agrawal, Henry Sinnreich, David Devanatham, Joe Pizzimenti, Matt Cannon, John Hearty, the whole MCI WorldCom IPOP Design team, Scott Orton, Greg Osterhout, Pat Sollee, Doug Weisenberg, Danny Mistry, Steve McKinnon, and Denise Ingram, Denise Caballero, Tom Redman, Ilya Slain, Pat Sollee, John Truetken, и других представителей MCI WorldCom, 3Com, Cisco, Lucent и Nortel.
 
 ## 8. Адреса авторов
 
-All listed authors actively contributed large amounts of text to this document.
+Все перечисленные авторы активно участвовали в написании большого объема текста данного документа.
 
    Alan Johnston
    MCI
@@ -4051,6 +4041,6 @@ The limited permissions granted above are perpetual and will not be revoked by t
 
 This document and the information contained herein is provided on an "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
 
-Acknowledgement
+### Благодарность
 
-Funding for the RFC Editor function is currently provided by the Internet Society.
+Финансирование функции редактора RFC в настоящее время осуществляется Интернет-сообществом.
