@@ -29,4 +29,6 @@ static DEFINE_PCI_DEVICE_TABLE(wctdm_pci_tbl) = {
 };
 ```
 
+ну и конечно пересобрать dahdi
+
 https://serverfault.com/questions/978738/dahdi-3-0-0-not-assign-spans-and-cannot-generate-configuration
