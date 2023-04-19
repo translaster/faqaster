@@ -32,15 +32,15 @@
 
 * [Asterisk: Будущее телефонии, 2 издание](http://asterisk.ru/store/files/Asterisk_RU_OReilly_DRAFT.pdf)
 
-* [Asterisk: Окончательное руководство, 4 издание](https://clck.ru/JDZUV)
+* [Asterisk: Окончательное руководство, 4 издание](https://disk.yandex.ru/i/gSWP4FFYbHsQDQ)
 
-* [Asterisk: Полное руководство, 5 издание](https://clck.ru/RRNqY)
+* [Asterisk: Полное руководство, 5 издание](https://disk.yandex.ru/i/-H3Z8UdH-Upggg)
 
 * [FreePBX 13: Руководство администратора](http://asterisk.ru/store/files/Rukovodstvo_Administratora_FreePBX_RU.pdf)
 
-* [Инструкция FreePBX](http://atsip.ru/images/docs/freepbx-manual.pdf)
+* [Инструкция FreePBX](https://disk.yandex.ru/i/lIzV4N67RZ57xg)
 
-* [Руководство по FreePBX 14](http://atsip.ru/images/Asterisk4ED/FreePBX_Guide.pdf)
+* [Руководство по FreePBX 14](https://disk.yandex.ru/i/wK3iygK7gAM6LQ)
 
 ## Софтфоны
 
