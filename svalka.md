@@ -15,6 +15,7 @@
 ## Создание DEB-пакета
 
 [Создание RPM или DEB пакетов с Checkinstall в Linux (хорошая статья с параметрами, хотя многое не объясняется)](https://linux-notes.org/sozdanie-rpm-ili-deb-paketov-s-checkinstall-v-linux/)
+
 [Создание пакетов .deb с помощью Checkinstall (корявый перевод - многое объясняется, но без параметров)](https://blog.desdelinux.net/ru/creando-paquetes-deb-con-checkinstall/)
 
 ## Изменение размера диска в Linux
