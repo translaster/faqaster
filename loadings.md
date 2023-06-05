@@ -46,7 +46,7 @@
 
 * [Microsip (Windows)](https://www.microsip.org/)
 
-* [Zoiper (WIndows, Mac, Linux, Android, iOS)](https://www.zoiper.com/en/voip-softphone/download/current)
+* [Zoiper (Windows, Mac, Linux, Android, iOS)](https://www.zoiper.com/en/voip-softphone/download/current)
 
 * [Bria](https://www.counterpath.com/softphone-clients/) | [Bria на 4pda.to](https://4pda.to/forum/index.php?showtopic=243439)
 
@@ -61,6 +61,8 @@
 * [Grandstream Wave (Android)](https://grandstream-russia.ru/products/ip_pbx/wave.html)
 
 * [CSipSimple (4PDA) (Android)](https://4pda.to/forum/index.php?showtopic=197229)
+
+* [PhonerLite (only Windows)](https://lite.phoner.de/download_en.htm)
 
 * [Sipnetic (Android)](https://www.sipnetic.com/)
 
