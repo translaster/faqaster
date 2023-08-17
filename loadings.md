@@ -24,8 +24,6 @@
 
 * [База знаний Voxlink](https://voxlink.ru/kb/)
 
-* [База знаний atsip.ru](http://atsip.ru/pomoshch/nastrojka-asterisk)
-
 * [База знаний merion networks](https://wiki.merionet.ru/ip-telephoniya/)
 
 * [Книги](http://asterisk.ru/knowledgebase/books)
