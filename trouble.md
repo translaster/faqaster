@@ -115,3 +115,11 @@ support_path=yes
 line=yes
 endpoint=<номер>
 ```
+
+#### sngrep криво отображает графику
+
+Если после запуска утилиты вы наблюдаете вместо нормальных линий линии из текста, то выполните в консоли линукса следующие команды:
+```
+alias sngrep=’NCURSES_NO_UTF8_ACS=1 sngrep’
+echo export NCURSES_NO_UTF8_ACS=1 >> /etc/environment
+```
