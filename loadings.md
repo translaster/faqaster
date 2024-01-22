@@ -4,7 +4,7 @@
 
 * [Исходники Asterisk](https://downloads.asterisk.org/pub/telephony/asterisk/)
 
-* [Исходники FreePBX](https://github.com/FreePBX/framework/releases)
+* [Исходники FreePBX](https://github.com/FreePBX/framework/tags)
 
 * [FreePBX Distro](https://www.freepbx.org/downloads/)
 
