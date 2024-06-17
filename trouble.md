@@ -115,3 +115,10 @@ support_path=yes
 line=yes
 endpoint=<номер>
 ```
+
+#### WARNING[*]: db.c:288 db_execute_sql: Error executing SQL (COMMIT): database is locked
+
+Ошибка доступа к файлу /var/lib/asterisk/astdb.sqlite3 должно быть `-rw-r--r--`, например:
+```
+-rw-r--r-- 1 asterisk asterisk 815K июн 17 14:38 /var/lib/asterisk/astdb.sqlite3
+```
