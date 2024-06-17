@@ -4,7 +4,7 @@
 
 * [Исходники Asterisk](https://downloads.asterisk.org/pub/telephony/asterisk/)
 
-* [Исходники FreePBX](https://github.com/FreePBX/framework/releases)
+* [Исходники FreePBX](https://github.com/FreePBX/framework/tags)
 
 * [FreePBX Distro](https://www.freepbx.org/downloads/)
 
@@ -23,8 +23,6 @@
 * [База знаний Asterisk.ru](http://asterisk.ru/knowledgebase)
 
 * [База знаний Voxlink](https://voxlink.ru/kb/)
-
-* [База знаний atsip.ru](http://atsip.ru/pomoshch/nastrojka-asterisk)
 
 * [База знаний merion networks](https://wiki.merionet.ru/ip-telephoniya/)
 

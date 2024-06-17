@@ -116,6 +116,14 @@ line=yes
 endpoint=<номер>
 ```
 
+#### sngrep криво отображает графику
+
+Если после запуска утилиты вы наблюдаете вместо нормальных линий линии из текста, то выполните в консоли линукса следующие команды:
+```
+alias sngrep=’NCURSES_NO_UTF8_ACS=1 sngrep’
+echo export NCURSES_NO_UTF8_ACS=1 >> /etc/environment
+```
+
 #### WARNING[*]: db.c:288 db_execute_sql: Error executing SQL (COMMIT): database is locked
 
 Ошибка доступа к файлу /var/lib/asterisk/astdb.sqlite3 должно быть `-rw-r--r--`, например:
