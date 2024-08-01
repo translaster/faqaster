@@ -133,6 +133,7 @@ echo export NCURSES_NO_UTF8_ACS=1 >> /etc/environment
 
 #### Некорректно отображается CallerID при вызовах между Panasonic KX-NS500 и Asterisk
 
+![img](files/panasonic.jpg)
 Проблему удалось решить следующим образом. На стороне Panasonic в свойствах транкового порта необходимо включить параметры CNIP, как отображено на скриншоте. В Asterisk, для корректного отображения CallerID Name при входящих звонках со стороны Panasonic, необходимо выполнить конвертацию кодировки:
 ```
 same => n,Set(CALLERID(name)=${ICONV(WINDOWS-1251,UTF-8,${CALLERID(name)})})
