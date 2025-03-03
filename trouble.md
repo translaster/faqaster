@@ -138,3 +138,9 @@ echo export NCURSES_NO_UTF8_ACS=1 >> /etc/environment
 ```
 same => n,Set(CALLERID(name)=${ICONV(WINDOWS-1251,UTF-8,${CALLERID(name)})})
 ```
+
+#### Предупреждение: невозможно подключение к он-лайн репозиторию(-ям) (https://mirror1.freepbx.org). Он-лайн модули не доступны.
+
+```
+fwconsole setting MODULE_REPO https://mirror2.freepbx.org
+```
