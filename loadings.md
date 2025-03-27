@@ -68,9 +68,9 @@
 
 * [Озвучка текста онлайн](https://apihost.ru/voice)
 
-* [Telegram-бот для озвучки](https://t.me/VoiceKitBot)
-
 * [RHVoice — единственный российский синтезатор речи с открытым исходным кодом](https://rhvoice.su/)
+
+* [Realistic Text-to-Speech AI converter](https://speechgen.io/)
 
 ## Обучение и сертификация
 
